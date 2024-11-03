@@ -1,4 +1,11 @@
-import { Hero, Record, Navbar, Services, WhoTrustUs } from "@/components";
+import {
+  Hero,
+  Record,
+  Navbar,
+  Services,
+  WhoTrustUs,
+  Footer,
+} from "@/components";
 
 export function HomePage() {
   return (
@@ -10,6 +17,7 @@ export function HomePage() {
       <div className="h-screen"></div>
       <WhoTrustUs />
       <div className="h-screen"></div>
+      <Footer />
     </>
   );
 }

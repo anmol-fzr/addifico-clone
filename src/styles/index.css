@@ -1,10 +1,17 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");*/
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
-    @apply bg-accent text-white;
+    @apply bg-accent text-white scroll-smooth;
   }
   h2 {
     font-size: 4.5em;
@@ -14,7 +21,7 @@
 }
 
 body {
-  font-family: "Helvetica";
+  font-family: "Montserrat", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -92,4 +99,21 @@ body {
 }
 .addifico-btn:hover .addifico-btn-arrow {
   transform: scale(0.25) translate3d(0, 0, 0);
+}
+
+.gradient__image {
+  z-index: -1;
+  width: 66%;
+  position: absolute;
+  top: -50%;
+  bottom: 0%;
+  left: auto;
+  right: -30%;
+}
+
+.gradient__image .is-home-hero-right {
+  width: 80em;
+  top: -20em;
+  right: -30em;
+  transform: rotate(-7deg);
 }
