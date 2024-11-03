@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-accent text-white;
+  }
+  h2 {
+    font-size: 4.5em;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+}
+
+body {
+  font-family: "Helvetica";
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.p-leading {
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1.15;
+}
+/*.rounded-theme {*/
+/*  @apply rounded-[24px] text-primary-muted;*/
+/*}*/
+
+.p-body-normal {
+  font-size: 1.3em;
+  line-height: 1.4;
+}
+.hero-body {
+  font-size: 6.5em;
+  font-weight: 500;
+  font-family: "Helvetica";
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../assets/fonts/helveticanowtext-bold-demo.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../assets/fonts/helveticanowtext-bold-demo.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+.span-element {
+  @apply bg-accent !inline-flex !h-4 !items-center !justify-center !p-12 rounded-full !pt-20 !px-20;
+}
+
+.humongus {
+  font-size: 10em;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.addifico-btn {
+  @apply h-14 cursor-pointer relative overflow-hidden bg-[#97d28b] grid rounded-full;
+}
+.addifico-btn-text {
+  @apply h-full origin-[100%] will-change-transform transition-transform duration-[0.5s] ease-[cubic-bezier(0.87,0,0.13,1)] flex items-center text-lg font-medium pl-5 pr-[3.75rem] py-0;
+  grid-area: 1 / 1;
+}
+.addifico-btn-text.is-outside {
+  @apply rotate-45;
+}
+.addifico-btn-circle {
+  @apply absolute h-full aspect-[1] bg-[#262d29] will-change-[clip-path] transition-[clip-path] duration-[0.5s] ease-[cubic-bezier(0.65,0,0.35,1)] right-0 top-0;
+  clip-path: circle(0.5rem);
+}
+.addifico-btn-arrow {
+  @apply w-full h-full will-change-transform transition-transform duration-[0.5s] ease-[cubic-bezier(0.65,0,0.35,1)];
+  transform: scale(0.25) translate3d(-200%, 0, 0);
+}
+.addifico-btn:hover .addifico-btn-text.is-inside {
+  @apply -rotate-45;
+}
+.addifico-btn:hover .addifico-btn-text.is-outside {
+  @apply rotate-0;
+}
+.addifico-btn:hover .addifico-btn-circle {
+  clip-path: circle(1.15rem);
+}
+.addifico-btn:hover .addifico-btn-arrow {
+  transform: scale(0.25) translate3d(0, 0, 0);
+}
