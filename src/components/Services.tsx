@@ -38,7 +38,7 @@ export function Services() {
 
   useGSAP(() => {
     function getScrollAmount() {
-      let racesWidth = racesRef.current?.scrollWidth;
+      let racesWidth = racesRef.current?.scrollWidth + 1200;
       return -(racesWidth - window.innerWidth);
     }
 
@@ -65,6 +65,9 @@ export function Services() {
         <h1 className="humongus">Services</h1>
         <div className="">
           <ul className="flex gap-4" ref={racesRef}>
+            <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
+            <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
+            <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
             {cards.map(({ title }) => (
               <ServiceCard {...{ title }} key={title} />
             ))}
