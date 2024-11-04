@@ -33,6 +33,13 @@ export default {
         theme: "24px",
       },
       fontSize: {
+        small: [
+          "1.1em",
+          {
+            lineHeight: "1.15em",
+            fontWeight: "500",
+          },
+        ],
         leading: [
           "1.5em",
           {

@@ -18,6 +18,11 @@
     font-weight: 500;
     line-height: 1.1;
   }
+  h3 {
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 1.2;
+  }
 }
 
 body {
@@ -28,11 +33,6 @@ body {
   display: none;
 }
 
-.p-leading {
-  font-size: 1.5em;
-  font-weight: 500;
-  line-height: 1.15;
-}
 /*.rounded-theme {*/
 /*  @apply rounded-[24px] text-primary-muted;*/
 /*}*/
@@ -41,6 +41,13 @@ body {
   font-size: 1.3em;
   line-height: 1.4;
 }
+
+.p-body-heading {
+  font-size: 2.65em;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
 .hero-body {
   font-size: 6.5em;
   font-weight: 500;
@@ -116,4 +123,32 @@ body {
   top: -20em;
   right: -30em;
   transform: rotate(-7deg);
+}
+
+.form-input {
+  @apply py-5 pl-6 pr-4 min-h-[65px] bg-accent rounded-xl outline-none focus:outline-none border border-transparent hover:border-primary/[0.2] focus:border-primary placeholder:text-primary-muted/[0.3] placeholder:text-leading placeholder:font-light;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.transition-theme {
+  @apply transition-all duration-300;
+}
+
+input::placeholder {
 }

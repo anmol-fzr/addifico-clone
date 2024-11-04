@@ -4,6 +4,7 @@ import {
   Navbar,
   Services,
   WhoTrustUs,
+  Contact,
   Footer,
 } from "@/components";
 
@@ -14,10 +15,11 @@ export function HomePage() {
       <Hero />
       <Services />
       <Record />
-      <div className="h-screen"></div>
       <WhoTrustUs />
-      <div className="h-screen"></div>
-      <Footer />
+      <div className="p-theme flex flex-col gap-theme">
+        <Contact />
+        <Footer />
+      </div>
     </>
   );
 }
