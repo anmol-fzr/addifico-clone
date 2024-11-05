@@ -152,3 +152,10 @@ html.lenis body {
 
 input::placeholder {
 }
+
+@media screen and (max-width: 991px) {
+  h2,
+  h3 {
+    font-size: 36px;
+  }
+}

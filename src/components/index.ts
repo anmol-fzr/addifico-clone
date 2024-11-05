@@ -6,3 +6,5 @@ export * from "./Record";
 export * from "./WhoTrustUs";
 export * from "./Footer";
 export * from "./Contact";
+export * from "./Related";
+export * from "./ThemeIcon";

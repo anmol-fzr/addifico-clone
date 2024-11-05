@@ -2,19 +2,22 @@ import { ComponentPropsWithoutRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 import { Section } from "./Section";
+import { Corner } from "./Corner";
 
 export function Record() {
   return (
     <Section>
       <div className="w-full max-w-[100em] mx-auto flex flex-col gap-theme">
         <div className="relative bg-accent rounded-b-[24px] h-[75px] w-4/12 flex items-center justify-center ">
-          <img
-            src="https://cdn.prod.website-files.com/63793925c7db23ce040b0824/64eb539f0f9044a1a9b1bb8a_frame-top-left-outside.svg"
+          <Corner
+            dir="top-left"
             className="absolute top-0 left-0 -translate-x-full w-invert aspect-square"
           />
+
           <h3 className="text-leading opacity-[0.6]">Track Record</h3>
-          <img
-            src="https://cdn.prod.website-files.com/63793925c7db23ce040b0824/64eb532cc6cfc5af6123a385_frame-top-right-outside.svg"
+
+          <Corner
+            dir="top-right"
             className="absolute top-0 right-0 translate-x-full w-invert aspect-square"
           />
         </div>

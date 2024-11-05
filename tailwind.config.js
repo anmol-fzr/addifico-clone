@@ -17,6 +17,7 @@ export default {
         },
         secondary: {
           DEFAULT: "#35413A",
+          muted: "#43554B",
         },
         accent: "#262D29",
       },

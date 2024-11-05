@@ -3,6 +3,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TrendBars } from "@/icons";
+import { Corner } from "./Corner";
+import { ThemeIcon } from "./ThemeIcon";
 
 const cards = [
   {
@@ -84,11 +86,29 @@ type ServiceCardProps = {
 const ServiceCard = (props: ServiceCardProps) => {
   const { title } = props;
   return (
-    <li className="max-w-[10vw] min-w-[300px] bg-secondary !aspect-square p-6 pb-8 rounded-theme h-full">
-      <a href="#" className="flex flex-col justify-between h-full">
-        <TrendBars className="text-primary" />
-        <p className="p-body-normal pr-16">{title}</p>
-      </a>
+    <li className="max-w-[10vw] min-w-[300px] bg-secondary !aspect-square rounded-theme h-full relative group overflow-hidden">
+      <div className="p-6 pb-8 h-full ">
+        <a href="#" className="flex flex-col justify-between h-full">
+          <TrendBars className="text-primary" />
+          <div className="bg-accent rounded-bl-2xl h-16 w-16 aspect-square absolute -top-16 -right-16 group-hover:top-0 group-hover:right-0 transition-theme" />
+          <Corner
+            dir="top-left"
+            className="h-invert w-invert aspect-square absolute top-0 -right-16 group-hover:top-0 group-hover:right-16 transition-theme"
+          />
+          <Corner
+            dir="top-left"
+            className="h-invert w-invert aspect-square absolute -top-16 right-0 group-hover:top-0 group-hover:top-16 transition-theme"
+          />
+
+          {/*
+          <Corner dir="top-left" className="absolute -top-16 -right-16" />
+          */}
+          <span className="p-6 group-hover:p-5 flex items-center justify-center absolute top-0 right-0 transition-theme">
+            <ThemeIcon icon="arrow-left" className="-rotate-45" fontSize={30} />
+          </span>
+          <p className="p-body-normal pr-16">{title}</p>
+        </a>
+      </div>
     </li>
   );
 };

@@ -1,28 +1,30 @@
 import { Icon } from "@iconify/react";
 import { FormInput, FormTextarea } from "./form";
+import { ThemeIcon } from "./ThemeIcon";
+import { HoverIcon } from "./HoverIcon";
 
 const cards = [
   {
-    iconName: "bxl:upwork",
+    iconName: "upwork",
     title: "UpWork",
     href: "#",
   },
   {
-    iconName: "jam:fiverr",
+    iconName: "fiverr",
     title: "Fiverr",
     href: "#",
   },
   {
-    iconName: "dashicons:linkedin",
+    iconName: "linkedin",
     title: "Linkedin",
     href: "#",
   },
   {
-    iconName: "solar:calendar-minimalistic-outline",
+    iconName: "calendar",
     title: "Book a meeting",
     href: "#",
   },
-];
+] as const;
 
 export function Contact() {
   return (
@@ -80,22 +82,15 @@ function ContactCards() {
             key={title}
             className={` rounded-theme gap-2 bg-black/10 w-full aspect-[0.8] lg:aspect-[1.1] p-7 flex flex-col items-start  justify-between group  `}
           >
-            <div className="float-left h-16 aspect-square flex items-center justify-center bg-accent rounded-full relative overflow-hidden">
-              <Icon
-                icon={iconName}
-                height={30}
-                width={30}
-                className="text-primary-muted group-hover:text-accent z-[2]"
-              />
-              <div className="absolute bg-primary h-16 w-full rounded-full top-full group-hover:top-0 z-[1] transition-theme"></div>
-            </div>
+            <HoverIcon icon={iconName} />
             <div className="inline-flex items-center overflow-hidden">
-              <Icon
-                icon="solar:arrow-right-linear"
+              <ThemeIcon
+                icon="arrow-left"
                 fontSize="2.75em"
-                className="text-primary-muted/[0.2] -translate-x-12 group-hover:translate-x-0 transition-theme "
+                className="text-primary-muted/[0.2] -translate-x-12 group-hover:translate-x-0 transition-theme"
               />
-              <h3 className="opacity-[0.7]  -translate-x-12 group-hover:translate-x-0 transition-all duration-500  ">
+
+              <h3 className="opacity-[0.7] -translate-x-12 group-hover:translate-x-0 transition-all duration-500">
                 {title}
               </h3>
             </div>

@@ -5,8 +5,10 @@ import {
   Services,
   WhoTrustUs,
   Contact,
+  Related,
   Footer,
 } from "@/components";
+import { WhyUs } from "@/components/WhyUs";
 
 export function HomePage() {
   return (
@@ -15,8 +17,10 @@ export function HomePage() {
       <Hero />
       <Services />
       <Record />
+      <WhyUs />
       <WhoTrustUs />
       <div className="p-theme flex flex-col gap-theme">
+        <Related />
         <Contact />
         <Footer />
       </div>
