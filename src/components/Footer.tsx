@@ -1,4 +1,5 @@
-import { Fragment } from "react/jsx-runtime";
+import { Separator } from "./Seperator";
+import { StaggeredFlipUp } from "./animated";
 
 const links = [
   {
@@ -16,29 +17,19 @@ const links = [
 const year = new Date().getFullYear();
 export function Footer() {
   return (
-    <div className="bg-black/10 p-theme flex flex-col rounded-theme text-body ">
-      <div className="flex w-full py-6 pb-10 justify-between">
+    <div className="bg-black/10 max-sm:pt-0  p-theme  flex flex-col rounded-theme text-body ">
+      <div className="flex w-full py-6 max-sm:pb-6 pb-10 justify-between">
         {links.map(({ title, links, className }) => (
-          <div className={`flex flex-col lg:flex-row gap-4 ${className}`}>
-            <p className="opacity-[0.2] lg:hidden">{title}:</p>
-            {links.map((title, index) => (
-              <Fragment key={title}>
-                <a
-                  href="#"
-                  className="text-primary-muted hover:text-primary transition-all duration-300"
-                >
-                  {title}
-                </a>
-                {index < links.length - 1 && (
-                  <span className="hidden lg:block opacity-[0.2]">/</span>
-                )}
-              </Fragment>
+          <ul className={`flex flex-col lg:flex-row gap-4 ${className}`}>
+            <li className="opacity-[0.2] lg:hidden">{title}:</li>
+            {links.map((title) => (
+              <StaggeredFlipUp key={title} href="#" title={title} as="a" />
             ))}
-          </div>
+          </ul>
         ))}
       </div>
-      <div className="h-[1px] bg-primary opacity-[0.2]" />
-      <div className="pt-8 pb-2">
+      <Separator />
+      <div className="pt-6 pb-2">
         <p className="text-center opacity-[0.2]">
           © {year} All Rights reserved
         </p>
