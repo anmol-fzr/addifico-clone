@@ -109,7 +109,7 @@ body {
 }
 
 .form-input {
-  @apply py-5 pl-6 pr-4 min-h-[65px] bg-accent rounded-xl outline-none focus:outline-none border border-transparent hover:border-primary/[0.2] focus:border-primary placeholder:text-primary-muted/[0.3] placeholder:text-leading placeholder:font-light;
+  @apply py-3 md:py-5 pl-6 md:pl-2 pr-4 bg-accent rounded-xl outline-none focus:outline-none border border-transparent hover:border-primary/[0.2] focus:border-primary placeholder:text-primary-muted/[0.3] placeholder:text-lg placeholder:font-light;
 }
 
 html.lenis,
@@ -176,4 +176,11 @@ input::placeholder {
   top: -20em;
   right: -30em;
   transform: rotate(-7deg);
+}
+
+.p-theme {
+  @apply p-2 md:p-themed;
+}
+.rounded-theme {
+  @apply rounded-xl md:rounded-themed;
 }

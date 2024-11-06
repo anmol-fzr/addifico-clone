@@ -36,13 +36,13 @@ export default {
         invert: "1.5em",
       },
       padding: {
-        theme: "1em",
+        themed: "1em",
       },
       spacing: {
         theme: "1em",
       },
       borderRadius: {
-        theme: "24px",
+        themed: "24px",
       },
       fontSize: {
         large: [

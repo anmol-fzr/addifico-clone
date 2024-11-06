@@ -5,7 +5,10 @@ type FormInputProps = ComponentPropsWithoutRef<"input">;
 
 function FormInput(props: FormInputProps) {
   return (
-    <input {...props} className={twMerge("form-input", props.className)} />
+    <input
+      {...props}
+      className={twMerge("form-input ~h-[25px]/[65px]  ", props.className)}
+    />
   );
 }
 

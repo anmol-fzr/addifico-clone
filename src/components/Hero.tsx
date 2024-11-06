@@ -13,7 +13,10 @@ export function Hero() {
               Competitive Edge through Creativity & Technology
             </p>
             <p className="sr-only">Market Insights that make a Difference</p>
-            <div className="hero-body md:inline-flex flex-col items-center hidden">
+            <div
+              aria-hidden
+              className="hero-body md:inline-flex flex-col items-center hidden"
+            >
               <div className="inline-flex gap-4 items-center">
                 <p>Market Insights</p>
                 <div className="span-element">
