@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+import { TwoCol } from "./TwoCol";
 
 const qas = [
   {
@@ -24,28 +25,14 @@ const qas = [
 ];
 
 export function WhyUs() {
-  const [isOpen, setIsOpen] = useState(false);
-  console.log({ isOpen });
-
   return (
-    <section className="min-h-screen p-theme">
-      <div className="p-24">
-        <div className="w-full max-w-[100em] mx-auto flex justify-between">
-          <div className="w-full">
-            <p className="sticky-heading text-body opacity-7 sticky top-[6em]">
-              Why us?
-            </p>
-          </div>
-          <div className="w-full">
-            <ul>
-              {qas.map(({ question, answer }) => (
-                <Accordion key={question} {...{ question, answer }} />
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    <TwoCol heading="Why us?">
+      <ul>
+        {qas.map(({ question, answer }) => (
+          <Accordion key={question} {...{ question, answer }} />
+        ))}
+      </ul>
+    </TwoCol>
   );
 }
 

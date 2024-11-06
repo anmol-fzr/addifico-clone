@@ -1,15 +1,17 @@
-import { ReactNode } from "react";
+import { ReactNode, forwardRef } from "react";
 
 type SectionProps = {
   children: ReactNode;
 };
 
-export function Section(props: SectionProps) {
+const Section = forwardRef<HTMLDivElement, SectionProps>((props, ref) => {
   return (
-    <div className="p-theme min-h-screen w-full relative">
+    <div ref={ref} className="min-h-screen w-full relative">
       <section className="bg-primary-muted rounded-theme h-full w-full pb-20">
         {props.children}
       </section>
     </div>
   );
-}
+});
+
+export { Section };

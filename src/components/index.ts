@@ -1,4 +1,5 @@
 export * from "./Hero";
+export * from "./WhyWeExists";
 export * from "./Navbar";
 export * from "./Loader";
 export * from "./Services";

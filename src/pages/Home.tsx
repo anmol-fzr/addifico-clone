@@ -7,6 +7,7 @@ import {
   Contact,
   Related,
   Footer,
+  WhyWeExists,
 } from "@/components";
 import { WhyUs } from "@/components/WhyUs";
 
@@ -15,11 +16,12 @@ export function HomePage() {
     <>
       <Navbar />
       <Hero />
+      <WhyWeExists />
       <Services />
-      <Record />
-      <WhyUs />
-      <WhoTrustUs />
       <div className="p-theme flex flex-col gap-theme">
+        <Record />
+        <WhyUs />
+        <WhoTrustUs />
         <Related />
         <Contact />
         <Footer />

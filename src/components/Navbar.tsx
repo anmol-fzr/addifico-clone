@@ -7,6 +7,7 @@ export function Navbar() {
       <div className="w-32 mb-2">
         <Logo />
       </div>
+      {/*
       <div>
         <button type="button" className="addifico-btn text-accent">
           <div className="addifico-btn-text is-inside">Get in touch</div>
@@ -22,6 +23,7 @@ export function Navbar() {
           </div>
         </button>
       </div>
+      */}
     </div>
   );
 }

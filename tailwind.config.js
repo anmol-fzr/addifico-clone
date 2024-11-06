@@ -19,7 +19,18 @@ export default {
           DEFAULT: "#35413A",
           muted: "#43554B",
         },
-        accent: "#262D29",
+        accent: {
+          DEFAULT: "#262D29",
+        },
+      },
+      height: {
+        seperator: "1px",
+      },
+      opacity: {
+        1: "0.1",
+        3: "0.3",
+        4: "0.4",
+        7: "0.7",
       },
       width: {
         invert: "1.5em",
@@ -34,6 +45,13 @@ export default {
         theme: "24px",
       },
       fontSize: {
+        large: [
+          "3em",
+          {
+            lineHeight: "1em",
+            fontWeight: "500",
+          },
+        ],
         small: [
           "1.1em",
           {
@@ -55,8 +73,25 @@ export default {
             fontWeight: "500",
           },
         ],
+        "body-small": [
+          ".9em",
+          {
+            lineHeight: 1.2,
+            fontWeight: 400,
+          },
+        ],
       },
     },
   },
   plugins: [fluid],
 };
+require("tailwindcss/plugin")(function ({ addVariant }) {
+  addVariant("em", ({ container }) => {
+    container.walkRules((rule) => {
+      rule.selector = `.em\\:${rule.selector.slice(1)}`;
+      rule.walkDecls((decl) => {
+        decl.value = decl.value.replace("rem", "em");
+      });
+    });
+  });
+});

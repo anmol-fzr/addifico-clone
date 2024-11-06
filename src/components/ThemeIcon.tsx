@@ -18,6 +18,5 @@ export type ThemeIconProps = Omit<IconProps, "icon"> & {
 
 export function ThemeIcon({ icon, ...props }: ThemeIconProps) {
   const iconName = themeIcons[icon];
-  console.log({ iconName });
   return <Icon icon={iconName} {...props} />;
 }

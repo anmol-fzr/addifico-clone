@@ -69,7 +69,7 @@ body {
 }
 
 .span-element {
-  @apply bg-accent !inline-flex !h-4 !items-center !justify-center !p-12 rounded-full !pt-20 !px-20;
+  @apply bg-accent !flex !items-center !justify-center !p-12 !px-20 rounded-full;
 }
 
 .humongus {
@@ -108,23 +108,6 @@ body {
   transform: scale(0.25) translate3d(0, 0, 0);
 }
 
-.gradient__image {
-  z-index: -1;
-  width: 66%;
-  position: absolute;
-  top: -50%;
-  bottom: 0%;
-  left: auto;
-  right: -30%;
-}
-
-.gradient__image .is-home-hero-right {
-  width: 80em;
-  top: -20em;
-  right: -30em;
-  transform: rotate(-7deg);
-}
-
 .form-input {
   @apply py-5 pl-6 pr-4 min-h-[65px] bg-accent rounded-xl outline-none focus:outline-none border border-transparent hover:border-primary/[0.2] focus:border-primary placeholder:text-primary-muted/[0.3] placeholder:text-leading placeholder:font-light;
 }
@@ -158,4 +141,39 @@ input::placeholder {
   h3 {
     font-size: 36px;
   }
+}
+
+.gradient__image-wrapper {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  overflow: visible;
+}
+.gradient__image {
+  z-index: 0;
+  width: 66%;
+  position: absolute;
+  top: -50%;
+  bottom: 0%;
+  left: auto;
+  right: -30%;
+}
+.is-home-hero {
+  width: 70em;
+  top: 0;
+  left: -40em;
+  right: auto;
+  transform: rotate(-146deg);
+}
+
+.is-home-hero-right {
+  width: 80em;
+  top: -20em;
+  right: -30em;
+  transform: rotate(-7deg);
 }

@@ -1,6 +1,6 @@
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef, useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Section } from "./Section";
 import { Corner } from "./Corner";
 
@@ -21,7 +21,7 @@ export function Record() {
             className="absolute top-0 right-0 translate-x-full w-invert aspect-square"
           />
         </div>
-        <div className="w-full flex gap-theme">
+        <div className="w-full flex flex-col lg:flex-row gap-theme p-2">
           <Col>
             <Card
               className="bg-white"
@@ -29,31 +29,31 @@ export function Record() {
               subTitle="Businesses analyzed"
             />
             <Card
-              className="bg-primary aspect-[1.5]"
+              className="bg-primary lg:aspect-[1.5]"
               title="100+"
               subTitle="Markets studied"
             />
           </Col>
-          <Col className="mt-20">
+          <Col className="lg:mt-20">
             <Card
               className="bg-accent text-primary"
               title="$50M+"
               subTitle="Raised"
             />
             <Card
-              className="bg-white aspect-[1.5]"
+              className="bg-white lg:aspect-[1.5]"
               title="700+"
               subTitle="Completed Projects"
             />
           </Col>
           <Col>
             <Card
-              className="bg-primary aspect-[1.5] justify-start"
+              className="bg-primary lg:aspect-[1.5] justify-start"
               title="500+"
               subTitle="Clients"
             />
             <Card
-              className="bg-accent text-primary aspect-[1.5]"
+              className="bg-accent text-primary lg:aspect-[1.5]"
               title="4.9/5"
               subTitle="Average customer rating"
             />
@@ -72,7 +72,7 @@ type CardProps = ComponentPropsWithoutRef<"div"> & {
 const Card = ({ title, subTitle, ...props }: CardProps) => (
   <div
     className={twMerge(
-      "rounded-theme text-accent aspect-[1.25] p-7 flex flex-col justify-end overflow-clip",
+      "rounded-theme text-accent min-h-[350px] w-full p-7 flex flex-col justify-end overflow-clip",
       props.className,
     )}
   >
@@ -82,6 +82,10 @@ const Card = ({ title, subTitle, ...props }: CardProps) => (
       }}
       animate={{
         y: 0,
+      }}
+      viewport={{
+        amount: "all",
+        once: true,
       }}
       className="font-semibold"
     >
@@ -93,7 +97,7 @@ const Card = ({ title, subTitle, ...props }: CardProps) => (
 
 function Col({ children, className = "" }) {
   return (
-    <div className={`w-full flex flex-col gap-theme w-4/12 ${className}`}>
+    <div className={`w-full flex lg:flex-col gap-theme lg:w-4/12 ${className}`}>
       {children}
     </div>
   );
