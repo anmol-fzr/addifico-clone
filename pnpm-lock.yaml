@@ -42,6 +42,9 @@ importers:
       '@eslint/js':
         specifier: ^9.13.0
         version: 9.14.0
+      '@shrutibalasa/tailwind-grid-auto-fit':
+        specifier: ^1.1.0
+        version: 1.1.0
       '@types/node':
         specifier: ^22.8.6
         version: 22.8.6
@@ -427,6 +430,9 @@ packages:
     resolution: {integrity: sha512-HGZgRFFYrMrP3TJlq58nR1xy8zHKId25vhmm5S9jETEfDf6xybPxsavFTJaufe2zgOGYJBskGlj49CwtEuFhWQ==}
     cpu: [x64]
     os: [win32]
+
+  '@shrutibalasa/tailwind-grid-auto-fit@1.1.0':
+    resolution: {integrity: sha512-sh/Vmdz/xTVziUF9ZYDb5YpECApdK85KXSRIJY58GzmdUuum5QBE3jqDeNMjICEVaVOSrOnp+gqUWx8A9dmZjA==}
 
   '@swc/core-darwin-arm64@1.7.42':
     resolution: {integrity: sha512-fWhaCs2+8GDRIcjExVDEIfbptVrxDqG8oHkESnXgymmvqTWzWei5SOnPNMS8Q+MYsn/b++Y2bDxkcwmq35Bvxg==}
@@ -1623,6 +1629,8 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.24.3':
     optional: true
+
+  '@shrutibalasa/tailwind-grid-auto-fit@1.1.0': {}
 
   '@swc/core-darwin-arm64@1.7.42':
     optional: true

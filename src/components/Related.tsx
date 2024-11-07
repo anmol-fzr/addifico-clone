@@ -1,37 +1,64 @@
 import { HoverIcon } from "./HoverIcon";
 import { ThemeIcon } from "./ThemeIcon";
 
+const date = "10/23/2003";
+
+const blogs = [
+  {
+    image:
+      "https://cdn.prod.website-files.com/64e8bbf4a8e46c39e0352f6e/653fbff5cabfba49d46f0767_Rectangle%20486.jpg",
+    title: "Startup Market Sizing: Founder's Guide to TAM SAM SOM",
+    date: "10/23/2023",
+  },
+  {
+    image:
+      "https://cdn.prod.website-files.com/64e8bbf4a8e46c39e0352f6e/653fc0054241bde3df05b337_Rectangle%20485.jpg",
+    title: "Startup Market Sizing: Founder's Guide to TAM SAM SOM",
+    date: "10/02/2023",
+  },
+  {
+    image:
+      "https://cdn.prod.website-files.com/64e8bbf4a8e46c39e0352f6e/653fc0136a4e51a055b9f34c_Rectangle%20487.jpg",
+    title: "Startup Market Sizing: Founder's Guide to TAM SAM SOM",
+    date: "09/27/2023",
+  },
+];
+
 export function Related() {
   return (
     <section className="bg-white p-theme rounded-theme space-y-theme">
       <div className="w-full max-w-[100em] md:mx-auto flex flex-col gap-[2em] pt-24 pb-6">
-        <div className="flex flex-col md:flex-row  gap-2 justify-between">
+        <div className="flex gap-2 justify-between">
           <h2 className="text-secondary-muted w-full">Our latest resources</h2>
           <span className="group">
             <HoverIcon icon="arrow-left" dir="left" doubleIcon />
           </span>
         </div>
-        <div className="grid grid-cols-3 gap-8">
-          <div className="w-full flex flex-col gap-3 ">
-            <img
-              src="https://cdn.prod.website-files.com/64e8bbf4a8e46c39e0352f6e/653fbff5cabfba49d46f0767_Rectangle%20486.jpg"
-              className="rounded-theme"
-            />
-            <div className="flex items-center justify-between">
-              <span className="text-body-small text-secondary-muted opacity-4 font-medium">
-                Blog
-              </span>
+        <div className="grid grid-auto-fit gap-8">
+          {blogs.map(({ image, title, date }) => (
+            <div key={title} className="w-full flex flex-col gap-3 ">
+              <img src={image} className="rounded-theme" />
+              <div className="flex items-center justify-between">
+                <span className="text-body-small text-secondary-muted opacity-4 font-medium">
+                  Blog
+                </span>
 
-              <span className="text-body-small text-secondary-muted opacity-4 font-medium">
-                {new Intl.DateTimeFormat("en-GB", {
-                  dateStyle: "full",
-                }).format(new Date())}
-              </span>
+                <span className="text-body-small text-secondary-muted opacity-4 font-medium">
+                  {new Intl.DateTimeFormat("en-GB", {
+                    dateStyle: "full",
+                  }).format(new Date(date))}
+                </span>
+              </div>
+              <p className="text-accent ~text-lg/3xl font-medium text-secondary-muted">
+                {title}
+              </p>
+              <div className="mt-2">
+                <span className="bg-primary-muted/50 text-accent text-[.9em] py-[.5em] px-[1.2em] rounded-full">
+                  Market Sizing and Forecasting
+                </span>
+              </div>
             </div>
-            <p className="text-accent">
-              Startup Market Sizing: Founder's Guide to TAM SAM SOM
-            </p>
-          </div>
+          ))}
         </div>
       </div>
       <section className="bg-primary-muted p-4 pb-8 lg:pt-11 flex rounded-theme">

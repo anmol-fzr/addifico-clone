@@ -31,10 +31,10 @@ export function WhoTrustUs() {
               Who trusts us?
             </h4>
           </div>
-          {comps.map((comp) =>
+          {comps.map((comp, i) =>
             comp ? (
               <div
-                key={comp}
+                key={`${comp}-${i}`}
                 className={`bg-black/[0.1] hover:bg-white/[0.4] text-accent w-full h-full aspect-square max-h-[250px] flex justify-center items-center rounded-xl group transition-theme`}
               >
                 <div className="max-w-[125px] group-hover:text-[#003A9B] transition-theme">
@@ -43,7 +43,7 @@ export function WhoTrustUs() {
               </div>
             ) : (
               <div
-                key={comp}
+                key={`${comp}-${i}`}
                 className={` text-accent w-full h-full aspect-square max-h-[250px] flex justify-center items-center rounded-xl group transition-theme`}
               ></div>
             ),

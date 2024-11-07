@@ -44,15 +44,12 @@ type AccordionProps = {
 function Accordion({ question, answer }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <li role="listitem">
-      <div className="w-full space-x-[0.5em] space-y-[0.5em] cursor-pointer relative pr-[6em] pt-[3em] pb-[2.5em]">
+    <li role="listitem" onClick={() => setIsOpen((isOpen) => !isOpen)}>
+      <div className="w-full space-x-[0.5em] space-y-[0.5em] cursor-pointer relative lg:pr-[6em] pt-[3em] pb-[2.5em]">
         <div className="h-seperator bg-primary opacity-1 absolute inset-0 bottom-auto" />
-        <div
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
-          className="w-full overflow-hidden py-[0.2em] flex items-start justify-between "
-        >
+        <div className="w-full overflow-hidden py-[0.2em] flex items-start justify-between ">
           <h3
-            className={` ${isOpen ? "text-primary" : ""} text-[2.63em] capitalize  hover:opacity-4 transition-theme`}
+            className={` ${isOpen ? "text-primary" : ""} text-smallest lg:text-[2.63em] capitalize  hover:opacity-4 transition-theme`}
           >
             {question}
           </h3>

@@ -15,8 +15,10 @@ export function HomePage() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <WhyWeExists />
+      <div className="p-theme flex flex-col gap-theme">
+        <Hero />
+        <WhyWeExists />
+      </div>
       <Services />
       <div className="p-theme flex flex-col gap-theme">
         <Record />

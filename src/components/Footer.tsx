@@ -20,7 +20,10 @@ export function Footer() {
     <div className="bg-black/10 max-sm:pt-0  p-theme  flex flex-col rounded-theme text-body ">
       <div className="flex w-full py-6 max-sm:pb-6 pb-10 justify-between">
         {links.map(({ title, links, className }) => (
-          <ul className={`flex flex-col lg:flex-row gap-4 ${className}`}>
+          <ul
+            key={title}
+            className={`flex flex-col lg:flex-row gap-4 ${className}`}
+          >
             <li className="opacity-[0.2] lg:hidden">{title}:</li>
             {links.map((title) => (
               <StaggeredFlipUp key={title} href="#" title={title} as="a" />

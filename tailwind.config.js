@@ -90,7 +90,7 @@ export default {
       },
     },
   },
-  plugins: [fluid],
+  plugins: [fluid, require("@shrutibalasa/tailwind-grid-auto-fit")],
 };
 require("tailwindcss/plugin")(function ({ addVariant }) {
   addVariant("em", ({ container }) => {

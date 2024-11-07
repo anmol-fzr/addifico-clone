@@ -8,7 +8,7 @@ type TwoColProps = {
 export function TwoCol(props: TwoColProps) {
   const { heading, children } = props;
   return (
-    <section className="min-h-screen p-theme">
+    <section className="min-h-screen">
       {/* Will Inset a header in here */}
       <div></div>
       <div className="lg:p-24">

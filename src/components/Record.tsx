@@ -1,14 +1,14 @@
-import { ComponentPropsWithoutRef, useRef } from "react";
+import { ComponentPropsWithoutRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { Section } from "./Section";
 import { Corner } from "./Corner";
 
 export function Record() {
   return (
     <Section>
-      <div className="w-full max-w-[100em] mx-auto flex flex-col gap-theme">
-        <div className="relative bg-accent rounded-b-[24px] h-[75px] w-4/12 flex items-center justify-center ">
+      <div className="w-full lg:max-w-[100em] mx-auto flex flex-col gap-theme">
+        <div className="relative bg-accent lg:rounded-bl-[24px] rounded-br-[24px] h-[75px] w-fit px-6 lg:px-0 lg:w-4/12 flex items-center justify-center ">
           <Corner
             dir="top-left"
             className="absolute top-0 left-0 -translate-x-full w-invert aspect-square"
@@ -19,6 +19,11 @@ export function Record() {
           <Corner
             dir="top-right"
             className="absolute top-0 right-0 translate-x-full w-invert aspect-square"
+          />
+
+          <Corner
+            dir="top-right"
+            className="block lg:hidden absolute top-full left-0 w-invert aspect-square"
           />
         </div>
         <div className="w-full flex flex-col lg:flex-row gap-theme p-2">

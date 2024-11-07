@@ -6,7 +6,7 @@ export function Hero() {
   const rotate = useTransform(scrollY, [0, window.innerHeight], [0, 400]);
   return (
     <>
-      <div className="p-theme pt-[80px] !h-screen">
+      <div className="pt-[80px] !h-screen">
         <div className="backdrop-blur-sm h-full bg-black/10 flex items-center justify-center rounded-theme w-full relative !z-[2]">
           <div className="flex flex-col items-center">
             <p className="text-smallest lg:p-body-normal opacity-[0.4]">

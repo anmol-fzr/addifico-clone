@@ -66,10 +66,15 @@ export function Services() {
       <div className="lg:max-w-screen-2xl mx-auto " ref={racesWrapperRef}>
         <h1 className="humongus">Services</h1>
         <div className="">
-          <ul className="gap-4 hidden lg:flex" ref={racesRef}>
+          <ul className="gap-4 hidden md:flex" ref={racesRef}>
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
+            {cards.map(({ title }) => (
+              <ServiceCard {...{ title }} key={title} />
+            ))}
+          </ul>
+          <ul className="md:hidden flex flex-col gap-4">
             {cards.map(({ title }) => (
               <ServiceCard {...{ title }} key={title} />
             ))}
@@ -86,7 +91,7 @@ type ServiceCardProps = {
 const ServiceCard = (props: ServiceCardProps) => {
   const { title } = props;
   return (
-    <li className="max-w-[360px] min-w-[300px] bg-secondary !aspect-square rounded-theme hover:rounded-tr-none h-full relative group overflow-hidden transition-theme">
+    <li className="max-w-[360px] min-w-[300px] bg-secondary lg:aspect-square rounded-theme hover:rounded-tr-none h-full relative group overflow-hidden transition-theme">
       <div className="p-6 pb-8 h-full !z-[10]">
         <a href="#" className="flex flex-col justify-between h-full">
           <TrendBars className="text-primary !z-[11] group-hover:text-accent" />
