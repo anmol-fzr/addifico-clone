@@ -16,10 +16,7 @@ export function HomePage() {
     <>
       <Navbar />
       <Hero />
-      {/*
-       */}
       <WhyWeExists />
-      {/*
       <Services />
       <div className="p-theme flex flex-col gap-theme">
         <Record />
@@ -29,7 +26,8 @@ export function HomePage() {
         <Contact />
         <Footer />
       </div>
-      */}
+      {/*
+       */}
     </>
   );
 }

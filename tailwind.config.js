@@ -80,6 +80,13 @@ export default {
             fontWeight: 400,
           },
         ],
+        smallest: [
+          "24px",
+          {
+            lineHeight: 1.4,
+            fontWeight: 500,
+          },
+        ],
       },
     },
   },

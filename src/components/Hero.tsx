@@ -9,15 +9,19 @@ export function Hero() {
       <div className="p-theme pt-[80px] !h-screen">
         <div className="backdrop-blur-sm h-full bg-black/10 flex items-center justify-center rounded-theme w-full relative !z-[2]">
           <div className="flex flex-col items-center">
-            <p className="p-body-normal opacity-[0.4]">
+            <p className="text-smallest lg:p-body-normal opacity-[0.4]">
               Competitive Edge through Creativity & Technology
             </p>
             <p className="sr-only">Market Insights that make a Difference</p>
+            <div aria-hidden className="lg:hidden text-[52px] font-medium">
+              <p className="text-primary-muted">Market Insights that</p>
+              <p className="text-primary">Make a Difference</p>
+            </div>
             <div
               aria-hidden
-              className="hero-body md:inline-flex flex-col items-center hidden"
+              className="hero-body lg:inline-flex flex-col items-center hidden "
             >
-              <div className="inline-flex gap-4 items-center">
+              <div className="lg:inline-flex gap-4 items-center hidden">
                 <p>Market Insights</p>
                 <div className="span-element">
                   <motion.img
