@@ -46,12 +46,32 @@ function Accordion({ question, answer }: AccordionProps) {
     <li role="listitem" onClick={() => setIsOpen((isOpen) => !isOpen)}>
       <div className="w-full space-x-[0.5em] space-y-[0.5em] cursor-pointer relative lg:pr-[6em] pt-[3em] pb-[2.5em]">
         <div className="h-seperator bg-primary opacity-1 absolute inset-0 bottom-auto" />
-        <div className="w-full overflow-hidden py-[0.2em] flex items-start justify-between ">
+        <div className="w-full overflow-hidden py-[0.2em] flex items-end justify-between ">
           <h3
             className={` ${isOpen ? "text-primary" : ""} text-smallest lg:text-[2.63em] capitalize  hover:opacity-4 transition-theme`}
           >
             {question}
           </h3>
+          <motion.div
+            className="w-7 h-7 "
+            initial="closed"
+            animate={isOpen ? "opened" : "closed"}
+          >
+            <motion.div
+              variants={{
+                opened: { background: "#43554B" },
+                closed: { x: "-50%", background: "#97D28B" },
+              }}
+              className="h-[2px] w-full"
+            ></motion.div>
+            <motion.div
+              variants={{
+                opened: { background: "#262D29" },
+                closed: { background: "#97D28B" },
+              }}
+              className="bg-primary w-[2px] h-full -translate-y-1/2"
+            ></motion.div>
+          </motion.div>
         </div>
         <motion.div
           className="text-body letter-spacing-0-5 is-bigger opacity-4 overflow-hidden"
