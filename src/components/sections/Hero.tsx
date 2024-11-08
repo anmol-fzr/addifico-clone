@@ -1,12 +1,22 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Corner } from "../Corner";
+import { ThemeIcon } from "../ThemeIcon";
 
 export function Hero() {
   const { scrollY } = useScroll();
   const rotate = useTransform(scrollY, [0, window.innerHeight], [0, 400]);
+
+  const scrollDownWindow = () => {
+    window.scroll({
+      top: window.innerHeight,
+      left: 0,
+    });
+  };
+
   return (
     <>
-      <div className="pt-[80px] !h-screen">
-        <div className="backdrop-blur-sm h-full bg-black/10 flex items-center justify-center rounded-theme w-full relative !z-[2]">
+      <div className="!pt-[75px] !h-[calc(100vh_-_32px)]">
+        <div className="backdrop-blur-sm !h-full bg-black/10 flex items-center justify-center rounded-theme w-full relative !z-[2]">
           <div className="flex flex-col items-center">
             <p className="text-smallest lg:p-body-normal opacity-[0.4]">
               Competitive Edge through Creativity & Technology
@@ -48,10 +58,20 @@ export function Hero() {
             </div>
           </div>
 
-          <button className="absolute bottom-0 right-0 p-6 bg-transparent mix-blend-difference">
-            BTN
+          <button
+            onClick={scrollDownWindow}
+            className="h-[100px] aspect-square absolute bottom-0 right-0 dead-center"
+          >
+            <Corner
+              dir="curly-top-right-dark"
+              className="h-full !w-full rotate-90 absolute bottom-0 right-0"
+            />
+            <ThemeIcon
+              icon="arrow-left"
+              fontSize={36}
+              className="!w-[30px] text-white rotate-90 m-auto mr-[20px] mb-[20px]"
+            />
           </button>
-
           {/*
            */}
         </div>
