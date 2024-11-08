@@ -1,3 +1,4 @@
+export * from "./TrendBars";
 export * from "./UserSearch";
 export * from "./MarketSizing";
 export * from "./CompetitiveAnalysis";
