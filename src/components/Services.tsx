@@ -5,31 +5,40 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TrendBars, CustomerSearch } from "@/icons";
 import { Corner } from "./Corner";
 import { ThemeIcon } from "./ThemeIcon";
+import { cn } from "@/utils";
 
 const cards = [
   {
     title: "Market Trends Analysis",
+    desc: "Discover winning trends before everyone else and see how you can take advantage.",
   },
   {
     title: "Customer Research",
+    desc: "See how your customers live, think, and act and learn how to position your offering accordingly.",
   },
   {
     title: "Market Sizing and Forecasting",
+    desc: "Quantify the market potential of your products and services before you invest. Ever heard of TAM, SAM, and SOM?",
   },
   {
     title: "Competitive Analysis",
+    desc: "Learn who you’re up against, what makes them tick, and how to remain one step ahead.",
   },
   {
     title: "Business Plan & Pitch Deck",
+    desc: "Planning your new venture? We’ll help you tell your story in a way that gets people excited to join and invest.",
   },
   {
     title: "Financial Modeling and Forecasting",
+    desc: "Cashflow is king. We can help you model your revenue and expenses month by month so you know what to expect.",
   },
   {
     title: "Go-to-Market Strategy",
+    desc: "We’ll craft a highly specific and actionable step-by-step plan for your launch and expansion. All based on data. No gut feeling. ",
   },
   {
     title: "Business Development Strategy",
+    desc: "We know your products and services rock. Now let's push them to market the right way!",
   },
 ];
 gsap.registerPlugin(ScrollTrigger);
@@ -70,8 +79,8 @@ export function Services() {
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
-            {cards.map(({ title }) => (
-              <ServiceCard {...{ title }} key={title} />
+            {cards.map(({ title, desc }) => (
+              <ServiceCard {...{ title, desc }} key={title} />
             ))}
           </ul>
           <ul className="md:hidden flex flex-col gap-4">
@@ -86,33 +95,38 @@ export function Services() {
 }
 type ServiceCardProps = {
   title: string;
+  desc: string;
 };
 
 const ServiceCard = (props: ServiceCardProps) => {
-  const { title } = props;
+  const { title, desc } = props;
   return (
-    <li className="max-w-[360px] min-w-[300px] bg-secondary lg:aspect-square rounded-theme hover:rounded-tr-none h-full relative group overflow-hidden transition-theme">
+    <li className="max-w-[360px] min-w-[300px] bg-secondary lg:aspect-square rounded-theme h-full relative group transition-theme overflow-hidden">
       <div className="p-6 pb-8 h-full !z-[10]">
         <a href="#" className="flex flex-col justify-between h-full">
           <TrendBars className="text-primary !z-[11] group-hover:text-accent" />
-          <div className="bg-accent rounded-bl-2xl h-16 w-16 aspect-square absolute -top-16 -right-16 group-hover:top-0 group-hover:right-0 transition-theme !z-[11] !duration-500" />
           <Corner
-            dir="top-left"
-            className="h-invert w-invert aspect-square absolute top-0 -right-16 group-hover:top-0 group-hover:right-16 transition-theme !z-[11] !duration-500"
+            dir="curly-top-right-dark"
+            className="!h-[80px] !w-[80px] aspect-square absolute -top-[5em] -right-[5em] group-hover:top-[-1px] group-hover:right-[-1px] transition-theme !z-[11] !duration-500"
           />
-          <Corner
-            dir="top-left"
-            className="h-invert w-invert aspect-square absolute -top-16 right-0 group-hover:top-0 group-hover:top-16 transition-theme !z-[11] !duration-500"
-          />
-          <span className="p-6 group-hover:p-5 flex items-center justify-center absolute top-0 right-0 transition-theme !z-[11]">
-            <ThemeIcon icon="arrow-left" className="-rotate-45" fontSize={30} />
+          <span className="p-6 group-hover:p-4 flex items-center justify-center absolute top-0 right-0 transition-theme !z-[11]">
+            <ThemeIcon
+              icon="arrow-left"
+              className="-rotate-45 text-primary-muted opacity-[0.16] group-hover:opacity-[0.5] transition-theme"
+              fontSize={30}
+            />
           </span>
-          <p className="p-body-normal pr-16 !z-[12] group-hover:text-accent/[0.6] font-medium duration-500">
-            {title}
-          </p>
+          <div className="!z-[12] grid grid-cols-1 gap-2">
+            <p className="p-body-normal pr-16 !z-[12] group-hover:text-accent/[0.8] text-primary-muted/[0.8] font-medium duration-500">
+              {title}
+            </p>
+            <div className="service_single-small-wrapper opacity-0 group-hover:opacity-100 group-hover:max-h-[6em]">
+              <p className="text-small text-accent opacity-4">{desc}</p>
+            </div>
+          </div>
         </a>
       </div>
-      <div className="!w-full bg-primary absolute top-0 left-0 !z-[0] rounded-theme  h-full w-full translate-y-full group-hover:translate-y-0 transition-theme !duration-500"></div>
+      <div className="!w-full bg-primary absolute top-0 left-0 !z-[0] rounded-theme  h-full w-full translate-y-[110%] group-hover:translate-y-0 transition-theme !duration-500" />
     </li>
   );
 };

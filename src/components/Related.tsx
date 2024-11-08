@@ -1,4 +1,6 @@
+import { Corner } from "./Corner";
 import { HoverIcon } from "./HoverIcon";
+import { CornerCutOut } from "./Services";
 import { ThemeIcon } from "./ThemeIcon";
 
 const date = "10/23/2003";
@@ -36,7 +38,15 @@ export function Related() {
         </div>
         <div className="grid grid-auto-fit gap-8">
           {blogs.map(({ image, title, date }) => (
-            <div key={title} className="w-full flex flex-col gap-3 ">
+            <div
+              key={title}
+              className="w-full flex flex-col gap-3 relative group transition-theme !z-[10] overflow-hidden "
+            >
+              <Corner
+                dir="curly-top-right"
+                className="rounded-bl-2xl h-[5em] w-[5em] aspect-square absolute -top-[5em] -right-[5em] group-hover:top-0 group-hover:right-0 transition-theme !z-[11] !duration-500"
+              />
+
               <img src={image} className="rounded-theme" />
               <div className="flex items-center justify-between">
                 <span className="text-body-small text-secondary-muted opacity-4 font-medium">
