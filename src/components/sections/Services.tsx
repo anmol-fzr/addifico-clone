@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { ComponentPropsWithoutRef, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,6 +14,7 @@ import {
 } from "@/icons";
 import { Corner } from "../Corner";
 import { ThemeIcon } from "../ThemeIcon";
+import { cn } from "@/utils";
 
 const cards = [
   {
@@ -92,9 +93,9 @@ export function Services() {
         <h1 className="humongus">Services</h1>
         <div>
           <ul className="gap-4 hidden md:flex" ref={racesRef}>
-            <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
-            <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
-            <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
+            <EmptyServiceCard />
+            <EmptyServiceCard />
+            <EmptyServiceCard />
             {cards.map((service) => (
               <ServiceCard {...service} key={service.title} />
             ))}
@@ -114,11 +115,22 @@ type ServiceCardProps = {
   desc: string;
   icon: any;
 };
+type EmptyServiceCard = ComponentPropsWithoutRef<"li">;
+
+const EmptyServiceCard = ({ className, ...props }: EmptyServiceCard) => (
+  <li
+    className={cn(
+      "max-w-[360px] min-w-[300px] bg-transparent lg:!aspect-square h-full",
+      className,
+    )}
+    {...props}
+  />
+);
 
 const ServiceCard = (props: ServiceCardProps) => {
   const { title, desc, icon: Icon } = props;
   return (
-    <li className="max-w-[360px] min-w-[300px] bg-secondary lg:aspect-square rounded-theme h-full relative group transition-theme overflow-hidden">
+    <EmptyServiceCard className="bg-secondary rounded-theme relative group transition-theme overflow-hidden">
       <div className="p-6 pb-8 h-full !z-[10]">
         <a href="#" className="flex flex-col justify-between h-full">
           {/*
@@ -148,6 +160,6 @@ const ServiceCard = (props: ServiceCardProps) => {
         </a>
       </div>
       <div className="!w-full bg-primary absolute top-0 left-0 !z-[0] rounded-theme  h-full w-full translate-y-[110%] group-hover:translate-y-0 transition-theme !duration-500" />
-    </li>
+    </EmptyServiceCard>
   );
 };
