@@ -8,8 +8,8 @@ import {
   Related,
   Footer,
   WhyWeExists,
+  WhyUs,
 } from "@/components";
-import { WhyUs } from "@/components/WhyUs";
 
 export function HomePage() {
   return (
@@ -28,8 +28,6 @@ export function HomePage() {
         <Contact />
         <Footer />
       </div>
-      {/*
-       */}
     </>
   );
 }

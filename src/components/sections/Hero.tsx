@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export function Hero() {
   const { scrollY } = useScroll();
-
   const rotate = useTransform(scrollY, [0, window.innerHeight], [0, 400]);
   return (
     <>
@@ -23,7 +22,7 @@ export function Hero() {
             >
               <div className="lg:inline-flex gap-4 items-center hidden">
                 <p>Market Insights</p>
-                <div className="span-element">
+                <div className="span-element ">
                   <motion.img
                     src="https://cdn.prod.website-files.com/63793925c7db23ce040b0824/64f5c2e6bc77c145a44f4842_Star.svg"
                     loading="lazy"
@@ -69,6 +68,7 @@ export function Hero() {
       />
 */}
       <div className="gradient__image-wrapper overflow-hidden !-z-[1]">
+        {/*
         <img
           src="https://cdn.prod.website-files.com/63793925c7db23ce040b0824/64ef089c7513babb5e53bc6c_Meeesh2.jpg"
           loading="eager"
@@ -77,6 +77,7 @@ export function Hero() {
           alt=""
           className="gradient__image is-home-hero-right"
         />
+        */}
         <img
           src="https://cdn.prod.website-files.com/63793925c7db23ce040b0824/64ef089c7513babb5e53bc6c_Meeesh2.jpg"
           loading="eager"

@@ -1,7 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 import { useState } from "react";
-import { TwoCol } from "./TwoCol";
+import { TwoCol } from "../TwoCol";
 
 const qas = [
   {

@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
-import { FormInput, FormTextarea } from "./form";
-import { ThemeIcon } from "./ThemeIcon";
-import { HoverIcon } from "./HoverIcon";
+import { FormInput, FormTextarea } from "../form";
+import { ThemeIcon } from "../ThemeIcon";
+import { HoverIcon } from "../HoverIcon";
 
 const cards = [
   {

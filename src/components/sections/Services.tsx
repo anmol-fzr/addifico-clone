@@ -1,11 +1,10 @@
-import React, { ReactNode, useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TrendBars, CustomerSearch } from "@/icons";
-import { Corner } from "./Corner";
-import { ThemeIcon } from "./ThemeIcon";
-import { cn } from "@/utils";
+import { TrendBars } from "@/icons";
+import { Corner } from "../Corner";
+import { ThemeIcon } from "../ThemeIcon";
 
 const cards = [
   {
@@ -74,7 +73,7 @@ export function Services() {
     <div className="min-h-screen overflow-hidden py-24">
       <div className="lg:max-w-screen-2xl mx-auto " ref={racesWrapperRef}>
         <h1 className="humongus">Services</h1>
-        <div className="">
+        <div>
           <ul className="gap-4 hidden md:flex" ref={racesRef}>
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>

@@ -24,7 +24,7 @@ export function Corner({ dir, ...props }: CornerProps) {
     <img
       src={src}
       {...props}
-      className={cn("w-invert aspect-square", props.className)}
+      className={cn("select-none w-invert aspect-square", props.className)}
     />
   );
 }

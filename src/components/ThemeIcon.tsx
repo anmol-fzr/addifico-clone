@@ -8,6 +8,7 @@ const themeIcons = {
   fiverr: "jam:fiverr",
   linkedin: "dashicons:linkedin",
   calendar: "solar:calendar-minimalistic-outline",
+  menu: "solar:hamburger-menu-linear",
 } as const;
 
 type ThemeIcon = keyof typeof themeIcons;

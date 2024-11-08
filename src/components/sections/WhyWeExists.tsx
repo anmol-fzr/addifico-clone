@@ -1,4 +1,4 @@
-import { TwoCol } from "./TwoCol";
+import { TwoCol } from "../TwoCol";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 

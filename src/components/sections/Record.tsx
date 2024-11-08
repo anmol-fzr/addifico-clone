@@ -1,8 +1,8 @@
 import { ComponentPropsWithoutRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
-import { Section } from "./Section";
-import { Corner } from "./Corner";
+import { Section } from "../Section";
+import { Corner } from "../Corner";
 
 export function Record() {
   return (
