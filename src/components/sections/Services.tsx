@@ -2,41 +2,58 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TrendBars } from "@/icons";
+import {
+  TrendBars,
+  UserSearch,
+  MarketSizing,
+  CompetitiveAnalysis,
+  BusinessPlan,
+  FinancialModel,
+  GoToMarket,
+  BusinessDev,
+} from "@/icons";
 import { Corner } from "../Corner";
 import { ThemeIcon } from "../ThemeIcon";
 
 const cards = [
   {
     title: "Market Trends Analysis",
+    icon: TrendBars,
     desc: "Discover winning trends before everyone else and see how you can take advantage.",
   },
   {
     title: "Customer Research",
+    icon: UserSearch,
     desc: "See how your customers live, think, and act and learn how to position your offering accordingly.",
   },
   {
     title: "Market Sizing and Forecasting",
+    icon: MarketSizing,
     desc: "Quantify the market potential of your products and services before you invest. Ever heard of TAM, SAM, and SOM?",
   },
   {
     title: "Competitive Analysis",
+    icon: CompetitiveAnalysis,
     desc: "Learn who you’re up against, what makes them tick, and how to remain one step ahead.",
   },
   {
     title: "Business Plan & Pitch Deck",
+    icon: BusinessPlan,
     desc: "Planning your new venture? We’ll help you tell your story in a way that gets people excited to join and invest.",
   },
   {
     title: "Financial Modeling and Forecasting",
+    icon: FinancialModel,
     desc: "Cashflow is king. We can help you model your revenue and expenses month by month so you know what to expect.",
   },
   {
     title: "Go-to-Market Strategy",
+    icon: GoToMarket,
     desc: "We’ll craft a highly specific and actionable step-by-step plan for your launch and expansion. All based on data. No gut feeling. ",
   },
   {
     title: "Business Development Strategy",
+    icon: BusinessDev,
     desc: "We know your products and services rock. Now let's push them to market the right way!",
   },
 ];
@@ -78,13 +95,13 @@ export function Services() {
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
             <li className="max-w-[10vw] min-w-[300px] bg-transparent !aspect-square h-full"></li>
-            {cards.map(({ title, desc }) => (
-              <ServiceCard {...{ title, desc }} key={title} />
+            {cards.map((service) => (
+              <ServiceCard {...service} key={service.title} />
             ))}
           </ul>
           <ul className="md:hidden flex flex-col gap-4">
-            {cards.map(({ title }) => (
-              <ServiceCard {...{ title }} key={title} />
+            {cards.map((service) => (
+              <ServiceCard {...service} key={service.title} />
             ))}
           </ul>
         </div>
@@ -95,15 +112,20 @@ export function Services() {
 type ServiceCardProps = {
   title: string;
   desc: string;
+  icon: any;
 };
 
 const ServiceCard = (props: ServiceCardProps) => {
-  const { title, desc } = props;
+  const { title, desc, icon: Icon } = props;
   return (
     <li className="max-w-[360px] min-w-[300px] bg-secondary lg:aspect-square rounded-theme h-full relative group transition-theme overflow-hidden">
       <div className="p-6 pb-8 h-full !z-[10]">
         <a href="#" className="flex flex-col justify-between h-full">
+          {/*
           <TrendBars className="text-primary !z-[11] group-hover:text-accent" />
+          */}
+          <Icon className="text-primary !z-[11] group-hover:text-accent" />
+
           <Corner
             dir="curly-top-right-dark"
             className="!h-[80px] !w-[80px] aspect-square absolute -top-[5em] -right-[5em] group-hover:top-[-1px] group-hover:right-[-1px] transition-theme !z-[11] !duration-500"
